@@ -1,6 +1,9 @@
-#include "graph.h"
+#include "nonimic.h"
+#include <string>
+#include <iostream>
+#include <fstream>
 
 int main(){
-    Graph g(1);
+    NonIMIC("NonIMicGraphs/nigfive.g");
     return 0;
 }
