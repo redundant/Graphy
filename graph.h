@@ -14,5 +14,19 @@ class Graph{
         void CreateFromAdjMatrix(int**  matrix);
         bool isConnected(int i, int j);
         std::string toString();
+        int A(int a, int b, int c);// returns number incident with abc if abc form a K3
+        int B1(int a, int b, int c);// similar, but with bc
+        int B2(int a, int b, int c);// ac
+        int B3(int a, int b, int c);// ab
+        int C1(int a, int b, int c);// a
+        int C2(int a, int b, int c);// b
+        int C3(int a, int b, int c);// c
+        int D(int a, int b, int c);// returns number incident with abc if abc form a K3 without edge bc
+        int E1(int a, int b, int c);//ab
+        int E2(int a, int b, int c);//ac
+        int F(int a, int b, int c);//bc
+        int G1(int a, int b, int c);//a
+        int G2(int a, int b, int c);//b
+        int G3(int a, int b, int c);//c
 };
 #endif

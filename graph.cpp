@@ -60,3 +60,185 @@ std::string Graph::toString(){
     }
     return oss.str();
 }
+
+int Graph::A(int a, int b, int c){
+    int temp = 0;
+    if(adjacency[a][b]==1 && adjacency[a][c]==1 && adjacency[b][c]==1){
+        for(int i = 0; i < n; i++){
+            if(i!=a && i!=b && i !=c){
+                if(adjacency[a][i]==1&&adjacency[b][i]==1&&adjacency[c][i]==1)
+                    temp++;
+            }
+        }
+    }
+    return temp;
+}
+
+int Graph::B1(int a, int b, int c){
+    int temp = 0;
+    if(adjacency[a][b]==1 && adjacency[a][c]==1 && adjacency[b][c]==1){
+        for(int i = 0; i < n; i++){
+            if(i!=a && i!=b && i !=c){
+                if(adjacency[b][i]==1&&adjacency[c][i]==1)
+                    temp++;
+            }
+        }
+    }
+    return temp;
+}
+
+int Graph::B2(int a, int b, int c){
+    int temp = 0;
+    if(adjacency[a][b]==1 && adjacency[a][c]==1 && adjacency[b][c]==1){
+        for(int i = 0; i < n; i++){
+            if(i!=a && i!=b && i !=c){
+                if(adjacency[a][i]==1&&adjacency[c][i]==1)
+                    temp++;
+            }
+        }
+    }
+    return temp;
+}
+int Graph::B3(int a, int b, int c){
+    int temp = 0;
+    if(adjacency[a][b]==1 && adjacency[a][c]==1){
+        for(int i = 0; i < n; i++){
+            if(i!=a && i!=b && i !=c){
+                if(adjacency[a][i]==1&&adjacency[b][i]==1&&adjacency[c][i]==1)
+                    temp++;
+            }
+        }
+    }
+    return temp;
+}
+
+int Graph::C1(int a, int b, int c){
+    int temp = 0;
+    if(adjacency[a][b]==1 && adjacency[a][c]==1 && adjacency[b][c]==1){
+        for(int i = 0; i < n; i++){
+            if(i!=a && i!=b && i !=c){
+                if(adjacency[a][i]==1)
+                    temp++;
+            }
+        }
+    }
+    return temp;
+}
+
+int Graph::C2(int a, int b, int c){
+    int temp = 0;
+    if(adjacency[a][b]==1 && adjacency[a][c]==1 && adjacency[b][c]==1){
+        for(int i = 0; i < n; i++){
+            if(i!=a && i!=b && i !=c){
+                if(adjacency[b][i]==1)
+                    temp++;
+            }
+        }
+    }
+    return temp;
+}
+
+int Graph::C3(int a, int b, int c){
+    int temp = 0;
+    if(adjacency[a][b]==1 && adjacency[a][c]==1 && adjacency[b][c]==1){
+        for(int i = 0; i < n; i++){
+            if(i!=a && i!=b && i !=c){
+                if(adjacency[c][i]==1)
+                    temp++;
+            }
+        }
+    }
+    return temp;
+}
+
+int Graph::D(int a, int b, int c){
+    int temp = 0;
+    if(adjacency[a][b]==1 && adjacency[a][c]==1 && adjacency[b][c]==0){
+        for(int i = 0; i < n; i++){
+            if(i!=a && i!=b && i !=c){
+                if(adjacency[a][i]==1&&adjacency[b][i]==1&&adjacency[c][i]==1)
+                    temp++;
+            }
+        }
+    }
+    return temp;
+}
+
+
+int Graph::E1(int a, int b, int c){
+    int temp = 0;
+    if(adjacency[a][b]==1 && adjacency[a][c]==1 && adjacency[b][c]==0){
+        for(int i = 0; i < n; i++){
+            if(i!=a && i!=b && i !=c){
+                if(adjacency[a][i]==1 && adjacency[b][i]==1)
+                    temp++;
+            }
+        }
+    }
+    return temp;
+}
+
+int Graph::E2(int a, int b, int c){
+    int temp = 0;
+    if(adjacency[a][b]==1 && adjacency[a][c]==1 && adjacency[b][c]==0){
+        for(int i = 0; i < n; i++){
+            if(i!=a && i!=b && i !=c){
+                if(adjacency[a][i]==1 && adjacency[c][i]==1)
+                    temp++;
+            }
+        }
+    }
+    return temp;
+}
+
+int Graph::F(int a, int b, int c){
+    int temp = 0;
+    if(adjacency[a][b]==1 && adjacency[a][c]==1 && adjacency[b][c]==0){
+        for(int i = 0; i < n; i++){
+            if(i!=a && i!=b && i !=c){
+                if(adjacency[b][i]==1 && adjacency[c][i]==1)
+                    temp++;
+            }
+        }
+    }
+    return temp;
+}
+
+int Graph::G1(int a, int b, int c){
+    int temp = 0;
+    if(adjacency[a][b]==1 && adjacency[a][c]==1 && adjacency[b][c]==0){
+        for(int i = 0; i < n; i++){
+            if(i!=a && i!=b && i !=c){
+                if(adjacency[a][i]==1)
+                    temp++;
+            }
+        }
+    }
+    return temp;
+}
+
+int Graph::G2(int a, int b, int c){
+    int temp = 0;
+    if(adjacency[a][b]==1 && adjacency[a][c]==1 && adjacency[b][c]==0){
+        for(int i = 0; i < n; i++){
+            if(i!=a && i!=b && i !=c){
+                if(adjacency[b][i]==1)
+                    temp++;
+            }
+        }
+    }
+    return temp;
+}
+
+int Graph::G3(int a, int b, int c){
+    int temp = 0;
+    if(adjacency[a][b]==1 && adjacency[a][c]==1 && adjacency[b][c]==0){
+        for(int i = 0; i < n; i++){
+            if(i!=a && i!=b && i !=c){
+                if(adjacency[c][i]==1)
+                    temp++;
+            }
+        }
+    }
+    return temp;
+}
