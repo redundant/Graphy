@@ -2,6 +2,8 @@
 #include <fstream>
 #include <iostream>
 #include <sstream>
+#include <cstring>
+
 
 NonIMIC::NonIMIC(std::string file){
     std::ifstream in(file.c_str());
