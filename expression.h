@@ -3,33 +3,34 @@
 
 class Expression{
     public:
-        virtual int evaluate(){return 0;}
+        virtual int evaluate();
 };
 
 class Addition: public Expression{
     private:
-        Expression left;
-        Expression right;
+        Expression* left;
+        Expression* right;
     public:
-        Addition(Expression a, Expression b){left = a; right = b;}
-        int evaluate(){return left.evaluate() * right.evaluate();}
+        Addition(Expression* a, Expression* b){left = a; right = b;}
+        int evaluate(){return left->evaluate() * right->evaluate();}
 };
 
 class Multiplication: public Expression{
     private:
-        Expression left;
-        Expression right;
+        Expression* left;
+        Expression* right;
     public:
-        Multiplication(Expression a, Expression b){left = a; right = b;}
-        int evaluate(){return left.evaluate() * right.evaluate();}
+        Multiplication(Expression* a, Expression* b){left = a; right = b;}
+        int evaluate(){return left->evaluate() * right->evaluate();}
 };
 
 class Choose: public Expression{
     private:
         int factorial(int n);
-        Expression left, right;
+        Expression* left;
+        Expression*  right;
     public:
-        Choose(Expression a, Expression b){left = a; right = b;}
+        Choose(Expression* a, Expression* b){left = a; right = b;}
         int evaluate();
 };
 

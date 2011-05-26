@@ -1,5 +1,9 @@
 #include "expression.h"
 
+int Expression::evaluate(){
+    return 0;
+}
+
 // inefficient, may replace with better way if needed later (unlikely)
 int Choose::factorial(int n){
     if(n < 0)
@@ -10,8 +14,8 @@ int Choose::factorial(int n){
 }
 
 int Choose::evaluate(){
-    int a = left.evaluate();
-    int b = right.evaluate();
+    int a = left->evaluate();
+    int b = right->evaluate();
     float temp = factorial(a)/(factorial(b)*factorial(a-b));
     return (int) temp;
 }
