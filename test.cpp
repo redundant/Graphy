@@ -10,6 +10,5 @@ int main(){
     Multiplication c(&a,&b);
     Addition d(&a,&c);
     Expression* e = &a;
-    std::cout<<a.evaluate()<<" "<<b.evaluate()<< " "<< c.evaluate()<<" "<< d.evaluate()<<" "<< e->evaluate()<< std::endl;
     return 0;
 }

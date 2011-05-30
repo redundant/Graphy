@@ -11,6 +11,7 @@ class Graph{
     public:
         Graph(int v);
         ~Graph();
+        int size(){return n;}
         void CreateFromAdjMatrix(int**  matrix);
         bool isConnected(int i, int j);
         std::string toString();
