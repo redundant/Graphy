@@ -13,11 +13,13 @@ the graphs are all nonisomorphic
 */
 class NonIMIC{
     private:
-       std::vector<Graph*> graphs;
-       int degree;
+        std::vector<Graph*> graphs;
+        int degree;
     public:
-       NonIMIC(std::string file);
-       ~NonIMIC();
+        NonIMIC(std::string file);
+        ~NonIMIC();
+        int numOfGraphs(){return graphs.size();}
+        Graph* getGraph(int n){return graphs[n];}
 };
 
 #endif

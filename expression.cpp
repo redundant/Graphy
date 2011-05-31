@@ -1,16 +1,5 @@
 #include "expression.h"
 
-int Sum::evaluate(){
-    int temp = 0;
-    for(int a= 2; a  < g->size(); a++){
-        for(int b = 1; b < a; b++){
-            for(int c = 0; c < b; c++)
-                temp+= term->evaluate(g,a,b,c);
-        }
-    }
-    return temp;
-}
-
 int Expression::evaluate(Graph* g, int a, int b, int c){
     return 0;
 }

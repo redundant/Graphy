@@ -6,15 +6,8 @@
 class Expression{
     public:
         virtual int evaluate(Graph* g, int a, int b, int c);
-};
-
-class Sum{
-    private:
-        Expression* term;
-        Graph* g;
-    public:
-        Sum(Expression* summand, Graph* graph){g = graph; term = summand;}
-        int evaluate(); 
+        Expression(){}
+        virtual ~Expression(){}
 };
 
 class Addition: public Expression{
@@ -24,6 +17,7 @@ class Addition: public Expression{
     public:
         Addition(Expression* a, Expression* b){left = a; right = b;}
         int evaluate(Graph* g, int a, int b, int c){return left->evaluate(g,a,b,c) * right->evaluate(g,a,b,c);}
+        ~Addition(){delete left; delete right;}
 };
 
 class Multiplication: public Expression{
@@ -33,6 +27,7 @@ class Multiplication: public Expression{
     public:
         Multiplication(Expression* a, Expression* b){left = a; right = b;}
         int evaluate(Graph* g, int a, int b, int c){return left->evaluate(g,a,b,c) * right->evaluate(g,a,b,c);}
+        ~Multiplication(){delete left; delete right;}
 };
 
 class Choose: public Expression{
@@ -43,6 +38,7 @@ class Choose: public Expression{
     public:
         Choose(Expression* a, Expression* b){left = a; right = b;}
         int evaluate(Graph* g, int a, int b, int c);
+        ~Choose(){delete left; delete right;}
 };
 
 class Number: public Expression{
