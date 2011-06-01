@@ -8,8 +8,9 @@
 
 Expression* parseExpression(std::string expr){
     // Assumes string is nonempty and valid PN with everything in parens
-    expr.erase(0,1);
-    expr.erase(expr.end()-1, expr.end());
+	
+	expr = expr.substr(0,expr.length()-1);
+	expr = expr.substr(1,expr.length());
 
         
     std::string left; // left and right things operated on by value
@@ -51,18 +52,18 @@ Expression* parseExpression(std::string expr){
 
     int depth = 0;
     int i = j;
-    while( i < expr.length()){
-        if(expr.at(i)=='(')
+    while( j < expr.length()){
+        if(expr.at(j)=='(')
             depth++;
-        if(expr.at(i)==')')
+        if(expr.at(j)==')')
             depth--;
         if(depth == 0)
             break;
-        i++;
+        j++;
     }// Break into two parts
     
-    left = expr.substr(i,j);
-    right = expr.substr(j+1);
+    left = expr.substr(i,j-1);// Have to be careful to remove spaces
+    right = expr.substr(j+2);
     
     if(expr.at(0) =='+'){
         return new Addition(parseExpression(left),parseExpression(right));
