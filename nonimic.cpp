@@ -43,10 +43,6 @@ NonIMIC::NonIMIC(std::string file){
         delete matrix;
     }
     else std::cout<<"Unable to open file";
-
-    for(int i = 0; i < graphs.size(); i++){
-        std::cout<<graphs[i]->toString()<<std::endl;
-    }
 }
 
 NonIMIC::~NonIMIC(){

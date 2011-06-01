@@ -9,8 +9,8 @@
 Expression* parseExpression(std::string expr){
     // Assumes string is nonempty and valid PN with everything in parens
 	
-	expr = expr.substr(0,expr.length()-1);
-	expr = expr.substr(1,expr.length());
+    expr = expr.substr(0,expr.length()-1);
+    expr = expr.substr(1,expr.length());
 
         
     std::string left; // left and right things operated on by value
@@ -95,7 +95,6 @@ std::vector<Expression*> parseFile(std::string filename){
 
 std::vector<int> evaluateOnGraphs(Expression* expr, NonIMIC* graphs){
     std::vector<int> temp;
-    
     for(int i = 0; i < graphs->numOfGraphs(); i++){
         Graph* tempGraph = graphs->getGraph(i);
         int val = 0;

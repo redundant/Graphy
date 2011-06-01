@@ -8,7 +8,7 @@ int Expression::evaluate(Graph* g, int a, int b, int c){
 int Choose::factorial(int n){
     if(n < 0)
         return 0; //meh
-    if(n = 0)
+    if(n == 0)
         return 1;
     return n*factorial(n-1);
 }
