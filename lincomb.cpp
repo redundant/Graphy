@@ -45,8 +45,8 @@ Expression* parseExpression(std::string expr){
             return new G1();
         if(expr.compare("G2")==0)
             return new G2();
-        if(expr.compare("G3")==0)
-            return new G3();
+        if(expr.compare("H")==0)
+            return new H();
         return new Number(atoi(expr.c_str()));
     }
 
@@ -93,20 +93,27 @@ std::vector<Expression*> parseFile(std::string filename){
     return temp;
 }
 
+int evaluateOnGraph(Expression* expr, Graph* graph){
+    
+    int val = 0;
+	int temp = 0;
+
+    for(int j = 2; j < graph->size(); j++){
+        for(int k = 1; k < j; k++){
+            for(int m = 0; m < k; m++){
+				temp = expr->evaluate(graph,j,k,m);
+                val+=temp;    
+            }
+        }
+    }
+    return val;
+}
+
 std::vector<int> evaluateOnGraphs(Expression* expr, NonIMIC* graphs){
     std::vector<int> temp;
     for(int i = 0; i < graphs->numOfGraphs(); i++){
         Graph* tempGraph = graphs->getGraph(i);
-        int val = 0;
-
-        for(int j = 2; j < tempGraph->size(); j++){
-            for(int k = 1; k < j; k++){
-                for(int m = 0; m < k; m++){
-                    val+=expr->evaluate(tempGraph,j,k,m);    
-                }
-            }
-        }
-        temp.push_back(val);
+        temp.push_back(evaluateOnGraph(expr,tempGraph));
     }
     return temp;
 }

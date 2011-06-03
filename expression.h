@@ -16,7 +16,7 @@ class Addition: public Expression{
         Expression* right;
     public:
         Addition(Expression* a, Expression* b){left = a; right = b;}
-        int evaluate(Graph* g, int a, int b, int c){return left->evaluate(g,a,b,c) * right->evaluate(g,a,b,c);}
+	int evaluate(Graph* g, int a, int b, int c){return left->evaluate(g,a,b,c) + right->evaluate(g,a,b,c);}
         ~Addition(){delete left; delete right;}
 };
 
@@ -26,7 +26,7 @@ class Multiplication: public Expression{
         Expression* right;
     public:
         Multiplication(Expression* a, Expression* b){left = a; right = b;}
-        int evaluate(Graph* g, int a, int b, int c){return left->evaluate(g,a,b,c) * right->evaluate(g,a,b,c);}
+	int evaluate(Graph* g, int a, int b, int c){return left->evaluate(g,a,b,c) * right->evaluate(g,a,b,c);}
         ~Multiplication(){delete left; delete right;}
 };
 
@@ -114,8 +114,8 @@ class G2: public Expression{
         int evaluate(Graph* g, int a, int b, int c){return g->G2(a,b,c);}
 };
 
-class G3: public Expression{
+class H: public Expression{
     public:
-        int evaluate(Graph* g, int a, int b, int c){return g->G3(a,b,c);}
+        int evaluate(Graph* g, int a, int b, int c){return g->H(a,b,c);}
 };
 #endif

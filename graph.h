@@ -26,8 +26,8 @@ class Graph{
         int E1(int a, int b, int c);//ab
         int E2(int a, int b, int c);//ac
         int F(int a, int b, int c);//bc
-        int G1(int a, int b, int c);//a
-        int G2(int a, int b, int c);//b
-        int G3(int a, int b, int c);//c
+        int G1(int a, int b, int c);//b
+        int G2(int a, int b, int c);//c
+        int H(int a, int b, int c);//a
 };
 #endif

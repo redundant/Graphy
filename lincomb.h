@@ -3,6 +3,7 @@
 
 #include "expression.h"
 #include "nonimic.h"
+#include "graph.h"
 #include <string>
 #include <vector>
 
@@ -11,6 +12,7 @@ Expression* parseExpression(std::string expr);
 
 std::vector<Expression*> parseFile(std::string filename);
 
+int evaluateOnGraph(Expression* expr, Graph* graph);
 std::vector<int> evaluateOnGraphs(Expression* expr, NonIMIC* graphs);
 
 std::vector<std::vector<int> > createDependencyMatrix(std::vector<Expression*> expressions, NonIMIC* graphs);
