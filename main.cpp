@@ -16,7 +16,7 @@ int main(int argc, char* argv[]){
     }
     std::cout<<"}";
     for(int i = 1; i < matrix.size(); i++){
-        std::cout<<",{"<<matrix[i][0];
+        std::cout<<",\n{"<<matrix[i][0];
         for(int j = 1; j < matrix[i].size(); j++){
             std::cout<<","<<matrix[i][j];
         }

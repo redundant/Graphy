@@ -14,12 +14,14 @@ the graphs are all nonisomorphic
 class NonIMIC{
     private:
         std::vector<Graph*> graphs;
+        std::vector<Graph*> complements;
         int degree;
     public:
         NonIMIC(std::string file);
         ~NonIMIC();
         int numOfGraphs(){return graphs.size();}
         Graph* getGraph(int n){return graphs[n];}
+        Graph* getComplementGraph(int n){return complements[n];}
 };
 
 #endif

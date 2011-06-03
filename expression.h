@@ -49,6 +49,11 @@ class Number: public Expression{
         int evaluate(Graph* g, int a, int b, int c){return val;}
 };
 
+class N: public Expression{
+    public:
+        int evaluate(Graph* g, int a, int b, int c){return g->size();}
+};
+
 class A: public Expression{
     public:
         int evaluate(Graph* g, int a, int b, int c){return g->A(a,b,c);}
@@ -69,6 +74,11 @@ class B3: public Expression{
         int evaluate(Graph* g, int a, int b, int c){return g->B3(a,b,c);}
 };
 
+class B: public Expression{
+    public:
+        int evaluate(Graph* g, int a, int b, int c){return g->B1(a,b,c)+g->B2(a,b,c)+g->B3(a,b,c);}
+};
+
 class C1: public Expression{
     public:
         int evaluate(Graph* g, int a, int b, int c){return g->C1(a,b,c);}
@@ -82,6 +92,11 @@ class C2: public Expression{
 class C3: public Expression{
     public:
         int evaluate(Graph* g, int a, int b, int c){return g->C3(a,b,c);}
+};
+
+class C: public Expression{
+    public:
+        int evaluate(Graph* g, int a, int b, int c){return g->C1(a,b,c)+g->C2(a,b,c)+g->C3(a,b,c);}
 };
 
 class D: public Expression{
@@ -99,6 +114,11 @@ class E2: public Expression{
         int evaluate(Graph* g, int a, int b, int c){return g->E2(a,b,c);}
 };
 
+class E: public Expression{
+    public:
+        int evaluate(Graph* g, int a, int b, int c){return g->E1(a,b,c)+g->E2(a,b,c);}
+};
+
 class F: public Expression{
     public:
         int evaluate(Graph* g, int a, int b, int c){return g->F(a,b,c);}
@@ -112,6 +132,11 @@ class G1: public Expression{
 class G2: public Expression{
     public:
         int evaluate(Graph* g, int a, int b, int c){return g->G2(a,b,c);}
+};
+
+class G: public Expression{
+    public:
+        int evaluate(Graph* g, int a, int b, int c){return g->G1(a,b,c)+g->G2(a,b,c);}
 };
 
 class H: public Expression{

@@ -19,6 +19,8 @@ Expression* parseExpression(std::string expr){
     int j = (int)expr.find("(");
     
     if(j == std::string::npos){
+        if(expr.compare("N")==0)
+            return new N();
         if(expr.compare("A")==0)
             return new A();   
         if(expr.compare("B1")==0)
@@ -27,24 +29,32 @@ Expression* parseExpression(std::string expr){
             return new B2();
         if(expr.compare("B3")==0)
             return new B3();
+        if(expr.compare("B")==0)
+            return new B();
         if(expr.compare("C1")==0)
             return new C1();
         if(expr.compare("C2")==0)
             return new C2();
         if(expr.compare("C3")==0)
             return new C3();
+        if(expr.compare("C")==0)
+            return new C();
         if(expr.compare("D")==0)
             return new D();
         if(expr.compare("E1")==0)
             return new E1();
         if(expr.compare("E2")==0)
             return new E2();
+        if(expr.compare("E")==0)
+            return new E();
         if(expr.compare("F")==0)
             return new F();
         if(expr.compare("G1")==0)
             return new G1();
         if(expr.compare("G2")==0)
             return new G2();
+        if(expr.compare("G")==0)
+            return new G();
         if(expr.compare("H")==0)
             return new H();
         return new Number(atoi(expr.c_str()));
@@ -101,7 +111,7 @@ int evaluateOnGraph(Expression* expr, Graph* graph){
     for(int j = 2; j < graph->size(); j++){
         for(int k = 1; k < j; k++){
             for(int m = 0; m < k; m++){
-				temp = expr->evaluate(graph,j,k,m);
+                temp = expr->evaluate(graph,j,k,m);
                 val+=temp;    
             }
         }
@@ -115,6 +125,17 @@ std::vector<int> evaluateOnGraphs(Expression* expr, NonIMIC* graphs){
         Graph* tempGraph = graphs->getGraph(i);
         temp.push_back(evaluateOnGraph(expr,tempGraph));
     }
+
+    return temp;
+}
+
+std::vector<int> evaluateOnComplements(Expression* expr, NonIMIC* graphs){
+    std::vector<int> temp;
+    for(int i = 0; i < graphs->numOfGraphs(); i++){
+        Graph* tempGraph = graphs->getComplementGraph(i);
+        temp.push_back(evaluateOnGraph(expr,tempGraph));
+    }
+
     return temp;
 }
 
@@ -123,6 +144,11 @@ std::vector<std::vector<int> > createDependencyMatrix(std::vector<Expression*> e
     for(int i = 0; i < expressions.size(); i++){
         temp.push_back(evaluateOnGraphs(expressions[i],graphs));
     }
+
+   for(int i = 0; i < expressions.size(); i++){
+       temp.push_back(evaluateOnComplements(expressions[i],graphs));
+   }
+   
 
     return temp;
 }
