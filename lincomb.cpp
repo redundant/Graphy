@@ -165,26 +165,11 @@ std::vector<int> evaluateOnGraphs(Expression* expr, NonIMIC* graphs){
     return temp;
 }
 
-std::vector<int> evaluateOnComplements(Expression* expr, NonIMIC* graphs){
-    std::vector<int> temp;
-    for(int i = 0; i < graphs->numOfGraphs(); i++){
-        Graph* tempGraph = graphs->getComplementGraph(i);
-        temp.push_back(evaluateOnGraph(expr,tempGraph));
-    }
-
-    return temp;
-}
-
 std::vector<std::vector<int> > createDependencyMatrix(std::vector<Expression*> expressions, NonIMIC* graphs){
     std::vector<std::vector<int> > temp;
     for(int i = 0; i < expressions.size(); i++){
         temp.push_back(evaluateOnGraphs(expressions[i],graphs));
     }
-
-   for(int i = 0; i < expressions.size(); i++){
-       temp.push_back(evaluateOnComplements(expressions[i],graphs));
-   }
-   
 
     return temp;
 }
