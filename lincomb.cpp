@@ -21,6 +21,42 @@ Expression* parseExpression(std::string expr){
     if(j == std::string::npos){
         if(expr.compare("N")==0)
             return new N();
+        if(expr.compare("Ab")==0)
+            return new Ab();   
+        if(expr.compare("B1b")==0)
+            return new B1b();
+        if(expr.compare("B2b")==0)
+            return new B2b();
+        if(expr.compare("B3b")==0)
+            return new B3b();
+        if(expr.compare("Bb")==0)
+            return new Bb();
+        if(expr.compare("C1b")==0)
+            return new C1b();
+        if(expr.compare("C2b")==0)
+            return new C2b();
+        if(expr.compare("C3b")==0)
+            return new C3b();
+        if(expr.compare("Cb")==0)
+            return new Cb();
+        if(expr.compare("Db")==0)
+            return new Db();
+        if(expr.compare("E1b")==0)
+            return new E1b();
+        if(expr.compare("E2b")==0)
+            return new E2b();
+        if(expr.compare("Eb")==0)
+            return new Eb();
+        if(expr.compare("Fb")==0)
+            return new Fb();
+        if(expr.compare("G1b")==0)
+            return new G1b();
+        if(expr.compare("G2b")==0)
+            return new G2b();
+        if(expr.compare("Gb")==0)
+            return new Gb();
+        if(expr.compare("Hb")==0)
+            return new Hb();
         if(expr.compare("A")==0)
             return new A();   
         if(expr.compare("B1")==0)

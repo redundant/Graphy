@@ -29,5 +29,19 @@ class Graph{
         int G1(int a, int b, int c);//b
         int G2(int a, int b, int c);//c
         int H(int a, int b, int c);//a
+        int Ab(int a, int b, int c);// returns number incident with abc if abc form an I3
+        int B1b(int a, int b, int c);// similar, but with bc
+        int B2b(int a, int b, int c);// ac
+        int B3b(int a, int b, int c);// ab
+        int C1b(int a, int b, int c);// a
+        int C2b(int a, int b, int c);// b
+        int C3b(int a, int b, int c);// c
+        int Db(int a, int b, int c);// returns number incident with abc if abc form an I3 with edge bc
+        int E1b(int a, int b, int c);//ab
+        int E2b(int a, int b, int c);//ac
+        int Fb(int a, int b, int c);//bc
+        int G1b(int a, int b, int c);//b
+        int G2b(int a, int b, int c);//c
+        int Hb(int a, int b, int c);//a
 };
 #endif
