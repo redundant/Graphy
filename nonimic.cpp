@@ -31,25 +31,8 @@ NonIMIC::NonIMIC(std::string file){
                 }
             }        
             Graph* g = new Graph(size);
-            Graph* gc = new Graph(size);
             g->CreateFromAdjMatrix(matrix);
-            for(int i = 0; i < size; i++){
-                for(int j = 0; j < i; j++){
-                    if(i != j){
-                        if(matrix[i][j] == 1){
-                            matrix[i][j] = 0;
-                            matrix[j][i] = 0;
-                        }
-                        else{
-                            matrix[i][j] = 1;
-                            matrix[j][i] = 1;
-                        }
-                    }
-                }
-            }
-            gc->CreateFromAdjMatrix(matrix);
 	    graphs.push_back(g);
-            complements.push_back(gc);
         }       
 
         in.close();
@@ -65,6 +48,5 @@ NonIMIC::NonIMIC(std::string file){
 NonIMIC::~NonIMIC(){
     for(int i = 0; i < graphs.size(); i++){
         delete graphs[i];
-        delete complements[i];
     }
 }
