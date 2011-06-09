@@ -511,10 +511,10 @@ int Graph::Hb(int a, int b, int c){
         a=b;
         b=c;
         c=temp1;
-    if(adjacency[a][b]==1 && adjacency[a][c]==1 && adjacency[b][c]==0){
+    if(adjacency[a][b]==0 && adjacency[a][c]==0 && adjacency[b][c]==1){
         for(int i = 0; i < n; i++){
             if(i!=a && i!=b && i !=c){
-                if(adjacency[a][i]==1&&adjacency[b][i]==0&&adjacency[c][i]==0)
+                if(adjacency[a][i]==0&&adjacency[b][i]==1&&adjacency[c][i]==1)
                     temp++;
             }
         }
