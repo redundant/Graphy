@@ -39,6 +39,8 @@ Expression* parseExpression(std::string expr){
             return new C3b();
         if(expr.compare("Cb")==0)
             return new Cb();
+        if(expr.compare("Jb")==0)
+            return new jb();
         if(expr.compare("Db")==0)
             return new Db();
         if(expr.compare("E1b")==0)
@@ -57,6 +59,8 @@ Expression* parseExpression(std::string expr){
             return new Gb();
         if(expr.compare("Hb")==0)
             return new Hb();
+        if(expr.compare("Ib")==0)
+            return new Ib();
         if(expr.compare("A")==0)
             return new A();   
         if(expr.compare("B1")==0)
@@ -75,6 +79,8 @@ Expression* parseExpression(std::string expr){
             return new C3();
         if(expr.compare("C")==0)
             return new C();
+        if(expr.compare("J")==0)
+            return new J();
         if(expr.compare("D")==0)
             return new D();
         if(expr.compare("E1")==0)
@@ -93,6 +99,8 @@ Expression* parseExpression(std::string expr){
             return new G();
         if(expr.compare("H")==0)
             return new H();
+        if(expr.compare("I")==0)
+            return new I();
         return new Number(atoi(expr.c_str()));
     }
 

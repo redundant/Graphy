@@ -22,6 +22,7 @@ class Graph{
         int C1(int a, int b, int c);// a
         int C2(int a, int b, int c);// b
         int C3(int a, int b, int c);// c
+        int J(int a, int b, int c);
         int D(int a, int b, int c);// returns number incident with abc if abc form a K3 without edge bc
         int E1(int a, int b, int c);//ab
         int E2(int a, int b, int c);//ac
@@ -29,6 +30,7 @@ class Graph{
         int G1(int a, int b, int c);//b
         int G2(int a, int b, int c);//c
         int H(int a, int b, int c);//a
+        int I(int a, int b, int c);
         int Ab(int a, int b, int c);// returns number incident with abc if abc form an I3
         int B1b(int a, int b, int c);// similar, but with bc
         int B2b(int a, int b, int c);// ac
@@ -36,6 +38,7 @@ class Graph{
         int C1b(int a, int b, int c);// a
         int C2b(int a, int b, int c);// b
         int C3b(int a, int b, int c);// c
+        int Jb(int a, int b, int c);
         int Db(int a, int b, int c);// returns number incident with abc if abc form an I3 with edge bc
         int E1b(int a, int b, int c);//ab
         int E2b(int a, int b, int c);//ac
@@ -43,5 +46,6 @@ class Graph{
         int G1b(int a, int b, int c);//b
         int G2b(int a, int b, int c);//c
         int Hb(int a, int b, int c);//a
+        int Ib(int a, int b, int c);
 };
 #endif
