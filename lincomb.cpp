@@ -40,7 +40,7 @@ Expression* parseExpression(std::string expr){
         if(expr.compare("Cb")==0)
             return new Cb();
         if(expr.compare("Jb")==0)
-            return new jb();
+            return new Jb();
         if(expr.compare("Db")==0)
             return new Db();
         if(expr.compare("E1b")==0)
