@@ -1,2 +1,6 @@
 This is a graph identity generation program created as part of an
-undergraduate research project at CMU. The code is gnu gplv3.
+undergraduate research project at CMU.
+
+Looking back at this, the code is really ill-commented. It's a bit messy as I've hard coded all the strongly regular graphs on a certain number of vertices.
+
+The code is gnu gplv3.
